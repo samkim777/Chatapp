@@ -11,12 +11,16 @@ import {
 const ChatList = () => {
   return (
     <View style={styles.container}>
-      <Pressable onPress={() => console.log("거 씨팔 사람이 낭만이없어")}>
-        <Text>
-          <Image style={styles.icon} source={require("./ralo.jpeg")} />
-          <Text style={styles.row}>거 제육좀볶나...? </Text>
-        </Text>
-      </Pressable>
+      <View style={styles.profile}>
+        <Image style={styles.icon} source={require("./ralo.jpeg")} />
+      </View>
+      <View>
+        <Text style={styles.roomHeader}> Ralo </Text>
+        <Text style={styles.roomText}>거 제육좀볶나...? </Text>
+      </View>
+      <View>
+        <Text style={styles.roomTime}>11:29 pm</Text>
+      </View>
     </View>
   );
 };
@@ -24,17 +28,34 @@ const ChatList = () => {
 const styles = StyleSheet.create({
   container: {
     top: 50,
-    right: 150,
+    right: 180,
+    flexDirection: "row",
   },
-
   icon: {
     borderRadius: 50,
-    width: 60,
-    height: 100,
+    width: 55,
+    height: 50,
   },
-  row: {
+  roomHeader: {
+    top: 0,
     fontSize: 20,
-    margin: 30,
+    right: 5,
+    fontWeight: "700",
+  },
+  roomText: {
+    top: 0,
+    fontSize: 15,
+    fontWeight: "700",
+  },
+  roomTime: {
+    top: 5,
+    fontSize: 15,
+    left: 70,
+    color: `#1e90ff`,
+  },
+  profile: {
+    marginRight: 30,
+    top: 3,
   },
 });
 
